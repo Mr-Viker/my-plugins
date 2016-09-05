@@ -1,0 +1,40 @@
+doctype html
+html(lang='zh-CN')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=Edge')
+        meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no')
+        title= 'Carousel-Banner'
+        link(rel='stylesheet' href='../css/carousel.css')
+
+    body
+        //- 轮播图展示区
+        section.carousel#carousel
+
+            - var imgPath = ['../images/1.jpg', '../images/2.jpg', '../images/3.jpg', '../images/4.jpg', '../images/5.jpg', ]
+            //- 图片容器
+            div.carousel-inner
+                each val, key in imgPath
+                    -if (key === 0)
+                        div.item.show
+                            img(src= val, alt='')
+                    -else
+                        div.item
+                            img(src= val, alt='')
+
+            //- 指示器
+            ol.carousel-indicator
+                - for (var i=0, len=imgPath.length; i<len; i++)
+                    if (i === 0)
+                        li.active
+                    -else
+                        li
+                        
+
+            //- 控制器
+            a.carousel-control.prev(href='#carousel')
+            a.carousel-control.next(href='#carousel')
+
+
+        script(src='../js/carousel.js')
+        script(src='../js/use-carousel.js')

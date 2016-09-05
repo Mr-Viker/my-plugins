@@ -1,0 +1,74 @@
+$carousel-w: 600px;
+$carousel-h: 400px;
+
+.show {
+    display: block !important;
+}
+.hide {
+    display: none !important;
+}
+/* 展示区 */
+.carousel {
+    position: relative;
+    display: inline-block;
+    width: $carousel-w;
+    height: $carousel-h;
+    overflow: hidden;
+}
+
+/* 图片容器 */
+.carousel-inner {
+    .item {
+        display: none;
+    }
+}
+
+/* 指示器 */
+.carousel-indicator {
+    position: absolute;
+    z-index: 10;
+    bottom: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+
+    li {
+        width: 10px;
+        height: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+        border: 2px solid #000;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .active {
+        background-color: #fff;
+    }
+}
+
+// 控制器
+.carousel-control {
+    display: none;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    width: 10%;
+    height: $carousel-h;
+    line-height: $carousel-h;
+    text-align: center;
+}
+.prev {
+    left: 0;
+    background: rgba(88,88,88,0.2) url('../images/arrow-l.png') center center no-repeat;
+}
+.next {
+    right: 0;
+    background: rgba(88,88,88,0.2) url('../images/arrow-r.png') center center no-repeat;
+}
+.carousel:hover .carousel-control{
+    display: block;
+}

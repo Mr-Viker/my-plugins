@@ -1,0 +1,81 @@
+$font-size-base: 12px;
+$color: #f8f8f8;
+$nav-h: (50rem / 12);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    font: $font-size-base 'Microsoft YaHei', 'Ariaf', sans-serif;
+}
+.show {
+    display: block;
+}
+
+.show-item {
+    float: none !important;
+    background-color: #888;
+    text-align: left !important;
+}
+
+/* 导航栏 */
+.navbar {
+    height: (50rem / 12);
+    background-color: #888;
+    
+    
+    .navbar-toggle {/*导航开关*/
+        display: inline-block;
+        float: right;
+        width: 50px;
+        height: $nav-h * 0.8;
+        margin: $nav-h*0.1 20px;
+        border: 2px solid #777;
+        border-radius: 8px;
+        background: transparent url('../images/list.png') center no-repeat;
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+    
+    .nav {/*导航内容*/
+        display: none;
+        list-style-type: none;
+        margin-left: 0;
+        padding-left: 0;
+        &:after,
+        &:before {
+            display: block;
+            content: "";
+        }
+        &:after {
+            clear: both;
+        }
+        @media (min-width: 768px) {
+            display: block;
+        }
+
+        .item {
+            float: left;
+            width: auto;
+            height: $nav-h;
+            line-height: $nav-h;
+            text-align: center;
+            font-size: (16rem /12);
+
+
+            a {
+                display: block;
+                padding-left: 30px;
+                padding-right: 30px;
+                text-decoration: none;
+                color: $color;
+                &:hover {
+                    background-color: #444;
+                }
+            }
+        }
+
+    }
+}
